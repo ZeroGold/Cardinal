@@ -61,9 +61,9 @@ SHELF_ROIS = [
 # in a production environment, or a more secure configuration management system
 
 DB_CONFIG = {
-    'host': os.getenv("DB_HOST", "localhost"),
-    'user': os.getenv("DB_USER", "root"),
-    'password': os.getenv("DB_PASSWORD", "abc123"), # <<<<<<< IMPORTANT: CHANGE THIS IN PRODUCTION!
+    'host': os.getenv("DB_HOST", "localhost"),# <<<<<<< IMPORTANT: CHANGE THIS IN PRODUCTION!
+    'user': os.getenv("DB_USER", "###"),# <<<<<<< IMPORTANT: CHANGE THIS IN PRODUCTION!
+    'password': os.getenv("DB_PASSWORD", "###"), # <<<<<<< IMPORTANT: CHANGE THIS IN PRODUCTION!
     'database': os.getenv("DB_NAME", "cardinal_inventory_db"),
     'port': int(os.getenv("DB_PORT", 3306))
 }
