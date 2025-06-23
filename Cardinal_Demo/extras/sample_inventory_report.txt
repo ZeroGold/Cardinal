@@ -1,0 +1,55 @@
+================================================================================
+               SAMPLE INVENTORY REPORT FOR LOCATION: DEMO_SITE_A
+               Generated On: 2025-06-14 11:48:19
+================================================================================
+
+
+
+### THIS IS A SAMPLE REPORT - DATA IS FOR DEMONSTRATION PURPOSES ONLY ###
+
+
+
+
+### PAGE 1: CURRENT INVENTORY SNAPSHOT (Sample Data) ###
+----------------------------------------
+  - Widget A                  : 15
+  - Gadget B                  : 8
+  - Thingamajig C             : 3
+  - Doodad D                  : 0
+  - Unit E                    : 20
+
+
+
+### PAGE 2: DETAILED INVENTORY BREAKDOWN (Sample Data) ###
+----------------------------------------
+  - Widget A                  : 15 (Across all ROIs in DEMO_SITE_A)
+  - Gadget B                  : 8 (Across all ROIs in DEMO_SITE_A)
+  - Thingamajig C             : 3 (Across all ROIs in DEMO_SITE_A)
+  - Doodad D                  : 0 (Across all ROIs in DEMO_SITE_A)
+  - Unit E                    : 20 (Across all ROIs in DEMO_SITE_A)
+
+
+
+### PAGE 3: RECENT TRANSACTIONS (Last 7 Days - Sample Data) ###
+--------------------------------------------------------------------------------
+Timestamp              | Item            | Type     | Qty  | Obj ID   | Conf
+--------------------------------------------------------------------------------
+2025-06-14 10:48:19    | Widget A        | IN       | 1    | obj101   | 0.95
+2025-06-14 09:48:19    | Gadget B        | IN       | 1    | obj102   | 0.92
+2025-06-14 08:48:19    | Widget A        | IN       | 1    | obj103   | 0.96
+2025-06-14 07:48:19    | Thingamajig C   | OUT      | 1    | obj104   | 0.88
+2025-06-14 06:48:19    | Gadget B        | OUT      | 1    | obj105   | 0.90
+2025-06-13 05:48:19    | Doodad D        | DISCREPANCY | 1    | obj106   | 0.75
+2025-06-12 01:48:19    | Unit E          | IN       | 1    | obj107   | 0.98
+2025-06-10 20:48:19    | Widget A        | IN       | 1    | obj108   | 0.94
+2025-06-07 15:48:19    | Thingamajig C   | IN       | 1    | obj109   | 0.89
+
+
+
+### PAGE 4: DISCREPANCY SUMMARY (Sample Data) ###
+----------------------------------------
+Timestamp              | Item            | Object ID  | Description
+--------------------------------------------------------------------------------
+2025-06-13 05:48:19    | Doodad D        | obj106     | Item disappeared from view without explicit OUT event.
+
+
