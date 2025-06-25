@@ -145,7 +145,7 @@ def process_frame(frame, *, initial_scan_mode=False, warmup_mode=False):
         imgsz=INPUT_WIDTH,
         conf=CONF_THRESHOLD,
         half=True,
-        device=0,
+        device=0, # Change to 'cpu' if you want to run on CPU
         verbose=False,
         classes=[39]  # Only bottles
     )[0]
@@ -224,8 +224,6 @@ def process_frame(frame, *, initial_scan_mode=False, warmup_mode=False):
 
     # --- 6. Inventory Logic: Zone Transitions ---
     for obj_id, obj in list(tracked_objects.items()):
-        # if obj["missing_frames"] > MAX_MISSING_FRAMES:
-        #     if obj["roi_curr"] and not obj["counted_out"]:
         if obj["missing_frames"] > MAX_MISSING_FRAMES:
             if (not warmup_mode) and obj["roi_curr"] and not obj["counted_out"]:    
                 item = obj["class_name"]
@@ -235,8 +233,11 @@ def process_frame(frame, *, initial_scan_mode=False, warmup_mode=False):
                 db_instance.log_transaction(item, "OUT", 1, str(obj_id), obj["confidence"], LOCATION_ID)
             del tracked_objects[obj_id]
             continue
-
+            # entered_roi needs to check if the object crosses the ROI boundary, not if it is simply present
+            # Super important
         entered_roi = obj["roi_prev"] is None and obj["roi_curr"] is not None
+            # exited_roi checks if the object was previously in an ROI and is now outside        
+            # Super important
         exited_roi = obj["roi_prev"] is not None and obj["roi_curr"] is None
 
         if warmup_mode:
