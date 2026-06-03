@@ -2,6 +2,10 @@
 
 **Cardinal** is a computer-vision inventory management system. It watches a camera feed, detects items on a shelf (or in a truck bay, bin, or storage area), counts them as they move in and out across a virtual line, and stores every event in a MySQL database. A separate reporting tool turns that data into polished PDF reports with charts and trends.
 
+
+https://github.com/user-attachments/assets/385b7121-fcd9-49f2-a753-d41b666a3bcb
+
+
 It is designed for hands-free, continuous inventory tracking: point a camera at a defined area, and Cardinal keeps a running count without anyone scanning barcodes.
 
 ---
@@ -9,7 +13,8 @@ It is designed for hands-free, continuous inventory tracking: point a camera at 
 ## How it works
 
 ```
-Camera frame
+Camera frame<img width="986" height="770" alt="databases_state" src="https://github.com/user-attachments/assets/4fc192de-2543-467d-8004-706eb57ec4ab" />
+
    │
    ▼
 YOLO object detection (per Region of Interest)
@@ -136,6 +141,7 @@ All settings live in `config.py` and can be overridden with environment variable
 | `MAX_MISSING_FRAMES` | `15` | Frames an object can be missing before it is dropped |
 
 ### Location & database
+<img width="986" height="770" alt="databases_state" src="https://github.com/user-attachments/assets/8765b755-7d7a-49d2-b513-7b935dbb9bd5" />
 
 | Variable | Default | Description |
 | --- | --- | --- |
